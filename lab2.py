@@ -12,6 +12,8 @@ def main():
     min_max_value = find_min_max(sorted_values)
     print(f"The minimum and maximum temperatue: {min_max_value}")
 
+    median_temp = cal_median(sorted_values)
+    print(f"The median temperature: {median_temp:.2f}")
 
 def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
@@ -36,6 +38,16 @@ def find_min_max(temperatures):
     max_temp = max(temperatures)
     min_temp = min(temperatures)
     return [min_temp, max_temp]
+
+def cal_median(temperatures):
+    total_number = len(temperatures)
+    mid_index = total_number // 2
+
+
+    if total_number % 2 == 1:
+        return temperatures[mid_index]
+    else:
+        return (temperatures[mid_index - 1] + temperatures[mid_index])/2
 
 if __name__ == "__main__":
     main()
