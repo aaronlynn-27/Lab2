@@ -6,14 +6,26 @@ def main():
 
     sorted_values = sort_temp(input_values)
 
-    average_temperature = calc_average(sorted_values)
-    print(f"The average temperature is: {average_temperature:.2f}")
-
-    min_max_value = find_min_max(sorted_values)
-    print(f"The minimum and maximum temperatue: {min_max_value}")
-
-    median_temp = cal_median(sorted_values)
-    print(f"The median temperature: {median_temp:.2f}")
+    while True:
+        choice = int(input(""""Enter your choice: 
+                    1. Calculate average temperature
+                    2. Calculate minimum and maximum tempertaure
+                    3. Calculate median temperature\n"""))
+    
+        if(choice == 1):
+            average_temperature = calc_average(sorted_values)
+            print(f"The average temperature is: {average_temperature:.2f}")
+            break
+        elif(choice == 2):
+            min_max_value = find_min_max(sorted_values)
+            print(f"The minimum and maximum temperatue: {min_max_value}")
+            break
+        elif(choice == 3):
+            median_temp = cal_median(sorted_values)
+            print(f"The median temperature: {median_temp:.2f}")
+            break
+        else:
+            print("Invalid choice! Please choose a valid option.")
 
 def display_main_menu():
     print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
